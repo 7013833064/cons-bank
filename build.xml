@@ -1,6 +1,10 @@
 <project name="test" default="run">
 
-	<target name='clean'>
+	<target name='use'>
+		<echo> hello from use target </echo>
+	</target>
+	
+	<target name='clean' depends='use'>
 		<echo> hello from clean target </echo>
 	</target>
 	
@@ -8,13 +12,15 @@
 		<echo> hello from compile target </echo>
 	</target>
 	
-	<target name='package' depends='compile,clean'>
+	<target name='package' depends='compile'>
 		<echo>hello from package target </echo>
 	</target>
 	
-	<target name='run' depends='package,clean'>
+	<target name='run' depends='package'>
 		<echo> hello from run target </echo>
 	</target>
+	
+	
 
 </project> 
          
